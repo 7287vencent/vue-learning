@@ -1,0 +1,24 @@
+#!/bin/bash
+# mini-vue
+cd mini-vue
+git fetch origin
+echo "mini-vue 完成"
+cd ..
+
+# vue-interview
+cd vue-interview
+git fetch origin
+echo "vue-interview 完成"
+cd ..
+
+# vue-study
+cd vue-study
+git fetch origin
+echo "vue-study 完成"
+cd ..
+
+# vue3-study
+cd vue3-study
+git fetch origin
+echo "vue3-study 完成"
+cd ..

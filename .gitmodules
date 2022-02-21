@@ -1,0 +1,12 @@
+[submodule "mini-vue"]
+	path = mini-vue
+	url = https://github.com/cuixiaorui/mini-vue
+[submodule "vue-interview"]
+	path = vue-interview
+	url = https://github.com/57code/vue-interview
+[submodule "vue-study"]
+	path = vue-study
+	url = https://github.com/57code/vue-study
+[submodule "vue3-study"]
+	path = vue3-study
+	url = https://github.com/57code/vue3-study
