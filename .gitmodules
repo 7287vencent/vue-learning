@@ -10,3 +10,18 @@
 [submodule "vue3-study"]
 	path = vue3-study
 	url = https://github.com/57code/vue3-study
+[submodule "source/create-vue"]
+	path = source/create-vue
+	url = https://github.com/vuejs/create-vue
+[submodule "source/vue-source"]
+	path = source/vue-source
+	url = https://github.com/vuejs/vue
+[submodule "source/vue3-source"]
+	path = source/vue3-source
+	url = https://github.com/vuejs/core
+[submodule "source/pinia"]
+	path = source/pinia
+	url = https://github.com/vuejs/pinia
+[submodule "source/vue-router4"]
+	path = source/vue-router4
+	url = https://github.com/vuejs/router
