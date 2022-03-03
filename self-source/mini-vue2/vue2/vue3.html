@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<div id="app">
+  <div class="home">
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <div>
+      <p v-for="(item, index) in list" :key="index">
+        <!-- {{ item.id }}--{{ item.text }} -->
+        {{ item }}
+      </p>
+      <button @click="changeArray">改变数组</button>
+      <p v-for="(item, index) in girls" :key="index">{{ item }}</p>
+      <button @click="changeObject">改变对象</button>
+    </div>
+  </div>
+</div>
+
+<script src="./vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data () {
+      return {
+        list: ['苹果', '香蕉', '菠萝'],
+        girls: {
+          name: '宋江',
+          age: 40,
+          gender: 'male',
+          hobby: '喝酒'
+        }
+      }
+    },
+    methods: {
+      changeObject () {
+        // ? 新增的当然没有了
+        this.girls.name2 = '我在哪儿'
+        console.log(this.girls, 'this.girls')
+      },
+      changeArray () {
+        this.list.push({e: 1})
+        console.log(this.list, 'this.list')
+      }
+    }
+  })
+</script>
