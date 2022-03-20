@@ -1,0 +1,34 @@
+<script src="../../dist/vue.global.js"></script>
+
+<script type="text/x-template" id="item-template">
+  <div class="header" @click="handleClick">
+    <h1>这是标题</h1>
+    <span>{{count}}</span>
+  </div>
+</script>
+
+<script>
+  const { reactive, computed, toRefs, ref } = Vue
+  const TreeItem = {
+    name: 'TreeItem',
+    template: '#item-template',
+    setup() {
+      console.log('setup')
+      let count = ref(0)
+      const handleClick = () => {
+        console.log('click', count.value++)
+      }
+      return {
+        handleClick,
+        count
+      }
+    }
+  }
+</script>
+
+
+<div id="demo"></div>
+
+<script>
+  Vue.createApp(TreeItem).mount('#demo')
+</script>
