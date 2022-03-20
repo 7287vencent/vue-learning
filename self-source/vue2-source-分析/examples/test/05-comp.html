@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue源码剖析</title>
+    <script src="../../dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo">
+        <h1>Vue组件化机制</h1>
+        <!-- <comp></comp> -->
+        <input type="text" v-model="value">
+    </div>
+    <script>
+        // Vue.component('comp', {
+        //     template: '<div>{{num}}</div>',
+        //     data () {
+        //         return {
+        //             num: 1
+        //         }
+        //     },
+        //     mounted() {
+        //         this.addNum()
+        //     },
+        //     methods: {
+        //         addNum () {
+        //             // setTimeout(() => {
+        //             //     this.num++
+        //             // }, 2000)
+        //         }
+        //     },
+        // })
+        // 创建实例
+        const app = new Vue({
+            el: '#demo',
+            data () {
+                return {
+                    value: 1
+                }
+            },
+        });
+
+        console.log(app.$options.render);
+        
+    </script>
+</body>
+
+</html>

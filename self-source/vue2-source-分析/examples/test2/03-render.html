@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vue源码剖析-render-template-el三者优先级比较</title>
+  <script src="../../dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="demo">
+    <h1>初始化流程</h1>
+    <p>{{foo}}</p>
+  </div>
+  <script>
+    // render > template > el
+    // 创建实例
+    const app = new Vue({
+      el: '#demo',
+      template: `
+  <input type="text" v-model="foo"/>
+ `,
+      data() {
+        return {
+          foo: 'foo',
+          list: [
+            'a',
+            'b',
+            'c'
+          ]
+        }
+      },
+      methods: {
+        handleClick() {
+          console.log("点击了事件")
+        }
+      },
+    })
+        // console.log(app.$options.render);
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Vue源码剖析-render-template-el三者优先级比较</title>
+  <script src="../../dist/vue.js"></script>
+</head>
+
+<body>
+  <div id="demo">
+    <h1>初始化流程</h1>
+    <p>{{foo}}</p>
+  </div>
+  <script>
+    // render > template > el
+    // 创建实例
+    const app = new Vue({
+      el: '#demo',
+      template: `
+      <div>
+        <h1 id="head">普通的h1标签</h1>
+        <div v-for="(item) in list" :key="item">
+    {{item}}
+  </div>
+  <div @click="handleClick">按钮</div>
+</div>
+ `,
+      data() {
+        return {
+          foo: 'foo',
+          list: [
+            'a',
+            'b',
+            'c'
+          ]
+        }
+      },
+      methods: {
+        handleClick() {
+          console.log("点击了事件")
+          let head = document.getElementById('head') || ''
+          if (head) {
+            head.parentElement.removeChild(head)
+          }
+          // head.parentElement
+          this.list.push("d")
+        }
+      },
+    })
+        // console.log(app.$options.render);
+
+  </script>
+</body>
+
+</html>
